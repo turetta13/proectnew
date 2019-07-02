@@ -35,12 +35,12 @@ class PageController extends Controller
 
     public function products()
     {
-        $products = \App\Product::where('publish',1);
-        return view ('products',[
-            'product'=>$products, 'products'=>Product::paginate(7)
+        $products = \App\Product::where('publish', 1);
+        return view('products', [
+            'product' => $products, 'products' => Product::paginate(7)
         ]);
 
-           }
+    }
 
     public function single()
     {
@@ -72,12 +72,53 @@ class PageController extends Controller
         return view('faq');
     }
 
-        public function cat($slug)
+    public function category ($slug)
+
     {
-       $category =  \App\Category::where([
-            'slug'=>$slug
+        $category = \App\Category::all();
+
+        $category = \App\Category::where(
+            [
+                'is_publish' => 1,
+                'slug' => $slug
+            ])->firstOrFail();
+        $categories = \App\Category::all();
+        return view('category',['category'=>$category,'categories'=>$categories]);
+    }
+
+    public function cat($slug)
+    {
+        $category = \App\Category::where([
+            'slug' => $slug
         ])->first();
         // dd($category->name);
         return view('index');
     }
 }
+
+
+//    public function cat($slug)
+//    {
+//        $categories = \App\Category::where('is_publish', 1)->get();
+//        $menu = [];
+//        foreach ($categories as $key => $category) {
+//            $menu[$category->id] = [
+//                'name' => $category->name,
+//                'slug' => $category->slug,
+//                'parent_id' => $category->parent_id
+//            ];
+//            if ($categories->where('parent_id,', $category->id)->get()) {
+//                $menu[$category->id]['subcategories'] = [];
+//                foreach ($categories->where('parent_id,', $category->id)->get() as $key => $value) {
+//                    $menu[$category->id]['subcategories'][] =
+//                        [
+//                            'name' => $category->name,
+//                            'slug' => $category->slug,
+//                            'parent_id' => $category->parent_id
+//                        ];
+//                }
+//            }
+//        }
+//        return view('index');
+//    }
+
