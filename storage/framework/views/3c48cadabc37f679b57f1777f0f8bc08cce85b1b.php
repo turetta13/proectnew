@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- //Custom Theme files -->
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="/css/style.css" type="text/css" rel="stylesheet" media="all">
     <!-- js -->
-    <script src="js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
     <!-- //js -->
     <!-- cart -->
@@ -104,22 +104,22 @@
                 <div class="col-md-2 footer-grid">
                     <h4>Команда</h4>
                     <ul>
-                        <li><a href="/team">Наша команда</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'team'])); ?>">Наша команда</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 footer-grid">
                     <h4>Услуги</h4>
                     <ul>
-                        <li><a href="/support">Поддержка</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                        <li><a href="/contact">Связь</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'support'])); ?>">Поддержка</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'faq'])); ?>">FAQ</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'contact'])); ?>">Связь</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 footer-grid">
                     <h4>Инфо</h4>
                     <ul>
-                        <li><a href="/pay">Оплата</a></li>
-                        <li><a href="/dalivery">Доставка</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'pay'])); ?>">Оплата</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'delivery'])); ?>">Доставка</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 footer-grid icons">

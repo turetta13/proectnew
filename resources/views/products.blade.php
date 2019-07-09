@@ -3,27 +3,27 @@
     <title>Yummy | Продукция</title>
     <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="/Content-Type" content="/text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!-- //Custom Theme files -->
-    <link href="/css/bootstrap.css" type="/text/css" rel="/stylesheet" media="all">
-    <link href="/css/style.css" type="/text/css" rel="/stylesheet" media="all">
-    <link href="/css/form.css" rel="/stylesheet" type="/text/css" media="all"/>
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/form.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- js -->
-    <script src="/js/jquery.min.js"></script>
-    <script type="/text/javascript" src="/js/bootstrap-3.1.1.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
     <!-- //js -->
     <!-- cart -->
-    <script src="/js/simpleCart.min.js"></script>
+    <script src="js/simpleCart.min.js"></script>
     <!-- cart -->
     <!-- the jScrollPane script -->
-    <script type="/text/javascript" src="/js/jquery.jscrollpane.min.js"></script>
-    <script type="/text/javascript" id="/sourcecode">
+    <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" id="sourcecode">
         $(function () {
             $('.scroll-pane').jScrollPane();
         });
     </script>
     <!-- //the jScrollPane script -->
-    <script type="/text/javascript" src="/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
     <!-- the mousewheel plugin -->
 </head>
 
@@ -37,12 +37,12 @@
             <h2>Наши товары</h2>
             <div class="col-md-9 product-model-sec">
 
-                @foreach($products as  $product)
+                @foreach($products as $product)
 
                     <div class="product-grid">
-                        <a href="">
+                        <a href="{{route('single',[$product->id])}}">
                             <div class="more-product"><span> </span></div>
-                            <div class="product-img b-link-stripe b-animate-go  thickbox">
+                            <div class="product-img b-link-stripe b-animate-go thickbox">
                                 <img src="{{$product->image_path}}" class="img-responsive" alt="">
                                 <div class="b-wrapper">
                                     <h4 class="b-animate b-from-left  b-delay03">
@@ -54,13 +54,12 @@
                         <div class="product-info simpleCart_shelfItem">
                             <div class="product-info-cust prt_name">
                                 <h4>{{$product->name}}</h4>
-                                <span class="item_price">{{$product->price}}</span>
-                                <div class="ofr">
-                                    <p class="pric1">
-                                        <del>200</del>
-                                    </p>
-                                    <p class="disc">[15% Off]</p>
+                                <span class="item_price">₴{{$product->price}}</span>
+
+                                <div>ы
+                                    {{$product->shortdesc}}
                                 </div>
+
                                 <input type="text" class="item_quantity" value="1"/>
                                 <input type="button" class="item_add items" value="Add">
                                 <div class="clearfix"></div>

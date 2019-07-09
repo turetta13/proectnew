@@ -12,7 +12,7 @@
         <div class="container">
             <h2 class="hdng"><span>S.Baker</span> with love</h2>
             <p>Наши торты сделают ваш день особенным</p>
-            <a href="/prod">Купить сейчас</a>
+            <a href="<?php echo e(route('products')); ?>">Купить сейчас</a>
             <div class="banner-text">
                 <img src="images/2.png" alt=""/>
             </div>

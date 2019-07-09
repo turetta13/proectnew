@@ -42,20 +42,28 @@ class PageController extends Controller
 
     }
 
-    public function single()
-    {
-        return view('single');
-    }
-
     public function sup()
     {
         return view('support');
     }
 
-    public function team()
+    public function articles($slug)
     {
-        return view('team');
+        $info = Article::where(['slug' => $slug])->firstOrFail();
+
+        return view('info', ['info' => $info]);
+
     }
+
+    public function single($id)
+    {
+
+        $single = Product::where(['id' => $id])->firstOrFail();
+        $similar = Product::where('category_id', '=', $id)->get();
+
+        return view('single', ['single' => $single, 'similar' => $similar]);
+    }
+
 
     public function pay()
     {
@@ -72,18 +80,13 @@ class PageController extends Controller
         return view('faq');
     }
 
-    public function category ($slug)
+    public function category($slug)
 
     {
-        $category = \App\Category::all();
-
         $category = \App\Category::where(
-            [
-                'is_publish' => 1,
-                'slug' => $slug
-            ])->firstOrFail();
-        $categories = \App\Category::all();
-        return view('category',['category'=>$category,'categories'=>$categories]);
+            ['is_publish' => 1, 'slug' => $slug])->firstOrFail();
+
+        return view('index', ['category' => $category]);
     }
 
     public function cat($slug)
@@ -94,6 +97,8 @@ class PageController extends Controller
         // dd($category->name);
         return view('index');
     }
+
+
 }
 
 
