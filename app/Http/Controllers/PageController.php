@@ -83,20 +83,26 @@ class PageController extends Controller
     public function category($slug)
 
     {
+
         $category = \App\Category::where(
             ['is_publish' => 1, 'slug' => $slug])->firstOrFail();
+        $categories = \App\Category::all();
 
-        return view('index', ['category' => $category]);
+        return view('category', [
+            'category' => $category,
+            'categories' => $categories,
+
+        ]);
     }
 
-    public function cat($slug)
-    {
-        $category = \App\Category::where([
-            'slug' => $slug
-        ])->first();
-        // dd($category->name);
-        return view('index');
-    }
+//    public function cat($slug)
+//    {
+//        $category = \App\Category::where([
+//            'slug' => $slug
+//        ])->first();
+//        // dd($category->name);
+//        return view('index');
+//    }
 
 
 }

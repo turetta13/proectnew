@@ -58,4 +58,3 @@
 @section('footer')
 @stop
 
-</html>
