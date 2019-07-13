@@ -15,7 +15,8 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $productsrand=\App\Product::all()->random()->get();
+                return view('index',['productsrand'=>$productsrand]);
     }
 
     public function acc()
@@ -36,9 +37,12 @@ class PageController extends Controller
     public function products()
     {
         $products = \App\Product::where('publish', 1);
-        return view('products', [
-            'product' => $products, 'products' => Product::paginate(7)
-        ]);
+
+              return view('products', 
+            [
+            'product' => $products, 'products' => Product::paginate(7), 
+               ]);
+
 
     }
 

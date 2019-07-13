@@ -20,23 +20,25 @@
     </div>
     <!--//banner-->
     <!--gallery-->
+    @foreach($productsrand as $key)
     <div class="gallery">
         <div class="container">
             <div class="gallery-grids">
                 <div class="col-md-8 gallery-grid glry-one">
-                    <a href="/prod"><img src="images/g1.jpg" class="img-responsive" alt=""/>
+                    <a href="/prod"><img src="{{$key->image_path}}" class="img-responsive" alt=""/>
                         <div class="gallery-info">
                             <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
-                            <a class="shop" href="/single">SHOP NOW</a>
+                            <a class="shop" href="/single">подробнее</a>
                             <div class="clearfix"></div>
                         </div>
                     </a>
                     <div class="galy-info">
-                        <p>Lorem Ipsum is simply</p>
+                        <p>{{$key->name}}</p>
                         <div class="galry">
                             <div class="prices">
-                                <h5 class="item_price">$95.00</h5>
+                                <h5 class="item_price">{{$key->price}}</h5>
                             </div>
+
                             <div class="rating">
                                 <span>☆</span>
                                 <span>☆</span>
@@ -48,6 +50,7 @@
                         </div>
                     </div>
                 </div>
+        @endforeach
                 <div class="col-md-4 gallery-grid glry-two">
                     <a href="/prod"><img src="images/g2.jpg" class="img-responsive" alt=""/>
                         <div class="gallery-info galrr-info-two">
@@ -55,6 +58,7 @@
                             <a class="shop" href="/single">SHOP NOW</a>
                             <div class="clearfix"></div>
                         </div>
+
                     </a>
                     <div class="galy-info">
                         <p>Lorem Ipsum is simply</p>
@@ -73,6 +77,7 @@
                         </div>
                     </div>
                 </div>
+             
                 <div class="col-md-3 gallery-grid ">
                     <a href="/prod"><img src="images/g3.png" class="img-responsive" alt=""/>
                         <div class="gallery-info">
