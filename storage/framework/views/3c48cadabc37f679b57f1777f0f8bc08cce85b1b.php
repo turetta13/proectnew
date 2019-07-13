@@ -13,6 +13,8 @@
     <!-- //js -->
     <!-- cart -->
     <script src="js/simpleCart.min.js"></script>
+
+    
     <script src="/js/imagezoom.js"></script>
     <!-- cart -->
     <!-- the jScrollPane script -->

@@ -1,3 +1,6 @@
+<?php $__env->startSection('header'); ?>
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('content'); ?>
     <br>
     <h2 class="hdng">Авторизация</h2>

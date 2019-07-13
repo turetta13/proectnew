@@ -3,20 +3,20 @@
 Route::get('/', 'PageController@index')->name('index');
 
 Route::get('/check', 'PageController@check')->name('check');
-Route::get('/contact', 'PageController@contact')->name('contact');
-Route::get('/product', 'PageController@products')->name('products');
 
-Route::get('/faq', 'PageController@faq')->name('faq');
-Route::get('/pay', 'PageController@pay')->name('pay');
-Route::get('/delivery', 'PageController@delivery')->name('delivery');
-Route::get('/support', 'PageController@sup')->name('support');
+Route::get('/product', 'PageController@products')->name('products');
 
 Route::get('/categories/{slug}', 'PageController@category')->name('categories');
 
 Route::get('/info/{slug}', 'PageController@articles')->name('info');
 
+Route::get('/product/{id}', 'PageController@single')->name('single');
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/product/{id}', 'PageController@single')->name('single');
 
+
+//АДМИНКА
+Route::get('/profile/edit', 'HomeController@profileEdit')->name('profile.edit');
+Route::post('/profile/save', 'HomeController@profileSave')->name('profile.save');

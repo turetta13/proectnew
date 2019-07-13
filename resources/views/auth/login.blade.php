@@ -1,4 +1,7 @@
-@extends('layout.main')
+@extends ('layout.main')
+
+@section('header')
+@endsection
 
 @section('content')
     <br>
@@ -80,4 +83,4 @@
 @endsection
 
 @section('footer')
-@stop
+@endsection
