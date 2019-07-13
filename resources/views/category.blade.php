@@ -1,37 +1,285 @@
+
+
 @extends ('layout.main')
 
-@section('header')
-@endsection
-
 @section('content')
-    @foreach ($categories->where('parent_id',0) as $cat)
 
+       <!--//header-->
+    <!--banner-->
+    <div class="banner">
+        <div class="container">
+            <h2 class="hdng"><span>S.Baker</span> with love</h2>
+            <p>Наши торты сделают ваш день особенным</p>
+            <a href="{{route('products')}}">Купить сейчас</a>
+            <div class="banner-text">
+                <img src="images/2.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    <!--//banner-->
+    <!--gallery-->
+    @foreach($products as $key)
+    <div class="gallery">
+        <div class="container">
+            <div class="gallery-grids">
+                <div class="col-md-8 gallery-grid glry-one">
+                    <a href="/prod"><img src="{{$key->image_path}}" class="img-responsive" alt=""/>
+                        <div class="gallery-info">
+                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
+                            <a class="shop" href="/single">подробнее</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <div class="galy-info">
+                        <p>{{$key->name}}</p>
+                        <div class="galry">
+                            <div class="prices">
+                                <h5 class="item_price">{{$key->price}}</h5>
+                            </div>
 
-        <li class="dropdown grid">
-            <a href="{{route('categories',['slug'=>$cat->slug])}}" class="dropdown-toggle list1"
-               data-toggle="dropdown">{{$cat->name}} <b class="caret"></b></a>
-            <ul class="dropdown-menu multi-column columns-1">
-                <div class="row">
-                    <div class="col-sm-10">
-                        <ul class="multi-column-dropdown">
-                            @if ($cat->child()->count()>0)
-                                @foreach ($cat->child()->get() as $cat2)
-
-
-                                    <li><a class="list"
-                                           href="{{route('categories',['slug'=>$cat2->slug])}}"> {{$cat2->name}}</a>
-                                        @endforeach
-                                        @endif
-                                    </li>
-                                    </li>
-                                @endforeach
-                        </ul>
+                            <div class="rating">
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
                 </div>
-            </ul>
-        </li>
-@stop
+        @endforeach
+                <div class="col-md-4 gallery-grid glry-two">
+                    <a href="/prod"><img src="images/g2.jpg" class="img-responsive" alt=""/>
+                        <div class="gallery-info galrr-info-two">
+                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
+                            <a class="shop" href="/single">SHOP NOW</a>
+                            <div class="clearfix"></div>
+                        </div>
 
+                    </a>
+                    <div class="galy-info">
+                        <p>Lorem Ipsum is simply</p>
+                        <div class="galry">
+                            <div class="prices">
+                                <h5 class="item_price">$95.00</h5>
+                            </div>
+                            <div class="rating">
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="col-md-3 gallery-grid ">
+                    <a href="/prod"><img src="images/g3.png" class="img-responsive" alt=""/>
+                        <div class="gallery-info">
+                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
+                            <a class="shop" href="/single">SHOP NOW</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <div class="galy-info">
+                        <p>Lorem Ipsum is simply</p>
+                        <div class="galry">
+                            <div class="prices">
+                                <h5 class="item_price">$95.00</h5>
+                            </div>
+                            <div class="rating">
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 gallery-grid ">
+                    <a href="/prod"><img src="images/g4.png" class="img-responsive" alt=""/>
+                        <div class="gallery-info">
+                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
+                            <a class="shop" href="/single">SHOP NOW</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <div class="galy-info">
+                        <p>Lorem Ipsum is simply</p>
+                        <div class="galry">
+                            <div class="prices">
+                                <h5 class="item_price">$95.00</h5>
+                            </div>
+                            <div class="rating">
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 gallery-grid ">
+                    <a href="/prod"><img src="images/g5.png" class="img-responsive" alt=""/>
+                        <div class="gallery-info">
+                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
+                            <a class="shop" href="/single">SHOP NOW</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <div class="galy-info">
+                        <p>Lorem Ipsum is simply</p>
+                        <div class="galry">
+                            <div class="prices">
+                                <h5 class="item_price">$95.00</h5>
+                            </div>
+                            <div class="rating">
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 gallery-grid ">
+                    <a href="/prod"><img src="images/g6.png" class="img-responsive" alt=""/>
+                        <div class="gallery-info">
+                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
+                            <a class="shop" href="/single">SHOP NOW</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <div class="galy-info">
+                        <p>Lorem Ipsum is simply</p>
+                        <div class="galry">
+                            <div class="prices">
+                                <h5 class="item_price">$95.00</h5>
+                            </div>
+                            <div class="rating">
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 gallery-grid ">
+                    <a href="/prod"><img src="images/g7.png" class="img-responsive" alt=""/>
+                        <div class="gallery-info">
+                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
+                            <a class="shop" href="/single">SHOP NOW</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <div class="galy-info">
+                        <p>Lorem Ipsum is simply</p>
+                        <div class="galry">
+                            <div class="prices">
+                                <h5 class="item_price">$95.00</h5>
+                            </div>
+                            <div class="rating">
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 gallery-grid ">
+                    <a href="/prod"><img src="images/g8.png" class="img-responsive" alt=""/>
+                        <div class="gallery-info">
+                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <div class="galy-info">
+                        <p>Lorem Ipsum is simply</p>
+                        <div class="galry">
+                            <div class="prices">
+                                <h5 class="item_price">$95.00</h5>
+                            </div>
+                            <div class="rating">
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 gallery-grid ">
+                    <a href="/prod"><img src="images/g9.png" class="img-responsive" alt=""/>
+                        <div class="gallery-info">
+                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
+                            <a class="shop" href="/single">SHOP NOW</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <div class="galy-info">
+                        <p>Lorem Ipsum is simply</p>
+                        <div class="galry">
+                            <div class="prices">
+                                <h5 class="item_price">$95.00</h5>
+                            </div>
+                            <div class="rating">
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 gallery-grid ">
+                    <a href="/prod"><img src="images/g10.png" class="img-responsive" alt=""/>
+                        <div class="gallery-info">
+                            <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
+                            <a class="shop" href="/single">SHOP NOW</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <div class="galy-info">
+                        <p>Lorem Ipsum is simply</p>
+                        <div class="galry">
+                            <div class="prices">
+                                <h5 class="item_price">$95.00</h5>
+                            </div>
+                            <div class="rating">
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                                <span>☆</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+       @endsection
 
-@section('footer')
-@stop
+    @section('footer')
+       @endsection
+

@@ -1,0 +1,339 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"styl",
+				"style"
+			],
+			[
+				"produ",
+				"Products"
+			],
+			[
+				"f",
+				"flex-start\talign-self"
+			],
+			[
+				"a",
+				"align-self\tproperty"
+			],
+			[
+				"fle",
+				"flex-wrap\tproperty"
+			],
+			[
+				"ro",
+				"row-reverse\tflex-direction"
+			],
+			[
+				"flex",
+				"flex-direction\tproperty"
+			],
+			[
+				"inl",
+				"inline-flex\tdisplay"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"pad",
+				"padding-top\tproperty"
+			],
+			[
+				"font-s",
+				"font-size\tproperty"
+			],
+			[
+				"mar",
+				"margin-top\tproperty"
+			],
+			[
+				"ma",
+				"margin-left\tproperty"
+			],
+			[
+				"back",
+				"background\tproperty"
+			],
+			[
+				"backg",
+				"background-size\tproperty"
+			],
+			[
+				"bac",
+				"background\tproperty"
+			],
+			[
+				"top",
+				"margin-top\tproperty"
+			],
+			[
+				"c",
+				"color\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"backgr",
+				"background-color\tproperty"
+			],
+			[
+				"fore",
+				"foreach\tforeach …"
+			],
+			[
+				"class",
+				"class\tclass …"
+			],
+			[
+				"SS",
+				"_SESSION"
+			],
+			[
+				"session",
+				"session_start"
+			],
+			[
+				"me",
+				"meta\tTag"
+			],
+			[
+				"t",
+				"table\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/OSPanel/domains/proect_clone-2/resources/views/products.blade.php",
+		"/C/Users/student/Desktop/Новая папка/Новая папка/Flex/style.css",
+		"/C/OSPanel/domains/proect_clone-2/resources/views/partials/menu.blade.php",
+		"/C/OSPanel/domains/proect_clone-2/resources/views/contact.blade.php",
+		"/C/OSPanel/domains/proect_clone-2/routes/web.php",
+		"/C/OSPanel/domains/proect_clone-2/app/Product.php",
+		"/C/OSPanel/domains/proect_clone-2/app/Http/Controllers/HomeController.php",
+		"/C/OSPanel/domains/proect_clone-2/resources/views/auth/register.blade.php",
+		"/C/OSPanel/domains/proect_clone-2/resources/views/auth/passwords/reset.blade.php",
+		"/C/OSPanel/domains/proect_clone-2/resources/views/auth/passwords/email.blade.php",
+		"/C/OSPanel/domains/proect_clone-2/resources/views/layout/main.blade.php",
+		"/C/Users/student/Desktop/Новая папка/eqHeight.html",
+		"/C/Users/student/Desktop/Новая папка/Новая папка/Flex/index.html",
+		"/C/Users/student/Desktop/Новая папка/Новая папка/Flex/flex.html",
+		"/C/OSPanel/domains/proect/app/Product.php",
+		"/C/OSPanel/domains/proect/app/Http/Controllers/PageController.php",
+		"/C/OSPanel/domains/proect/routes/web.php",
+		"/C/OSPanel/domains/proect/resources/views/partials/menu.blade.php",
+		"/C/OSPanel/domains/proect/resources/views/index.blade.php",
+		"/C/OSPanel/domains/proect/resources/views/layout/main.blade.php",
+		"/C/OSPanel/domains/proect/app/User.php",
+		"/C/OSPanel/domains/proect/app/Category.php",
+		"/C/OSPanel/domains/proect/storage/logs/laravel-2019-05-26.log",
+		"/C/OSPanel/domains/proect/.env",
+		"/C/Users/student/Desktop/Герман/урок 2/chess/index.html",
+		"/C/Users/student/Desktop/Герман/урок 2/chess/style.css",
+		"/C/Users/student/Desktop/Герман/урок 2/index.html",
+		"/C/Users/student/Desktop/Герман/урок 2/style.css",
+		"/C/Users/student/Desktop/Герман/урок 1/img/index.html",
+		"/C/Users/student/Desktop/Герман/урок 1/img/table.html",
+		"/C/Users/student/Desktop/Герман/урок 1/index.html",
+		"/C/OSPanel/domains/home-module05.ua/first-page.php",
+		"/C/OSPanel/domains/home-module05.ua/homework05.php",
+		"/C/OSPanel/domains/200419.ua/one.php",
+		"/C/OSPanel/domains/home-module05.ua/second-page.php",
+		"/C/OSPanel/domains/home-module02.ua/index.php",
+		"/C/OSPanel/domains/home-module02.ua/index130419_2.php",
+		"/C/Users/student/Desktop/home-module02.ua/index130419_2.php",
+		"/C/Users/student/Desktop/home-module02.ua/index.php",
+		"/C/Users/student/Desktop/home-module02.ua/index_2-1.php",
+		"/C/Users/student/Desktop/home-module02.ua/index_2-2.php",
+		"/C/OSPanel/domains/php30-230319.ua/index_2-1.php",
+		"/C/Users/student/Desktop/Новая папка (2)/unit/index.html",
+		"/C/OSPanel/domains/home-module01.ua/index_3.php",
+		"/C/Users/student/Desktop/home-module01.ua/index_1-1.php",
+		"/C/Users/student/Desktop/home-module01.ua/index_1-2.php",
+		"/C/OSPanel/domains/php30-230319.ua/index.php",
+		"/C/Users/student/Desktop/09_ДЗ_Нагний/style.css",
+		"/C/Users/student/Desktop/09_ДЗ_Нагний/index.html",
+		"/C/Users/student/Desktop/.htaccess",
+		"/C/evg/27/27.2.html",
+		"/C/Users/student/Desktop/Артемов/index.html",
+		"/C/Users/student/Desktop/Новая папка/css/style.css",
+		"/C/Users/student/Desktop/site/class-wp-rest-server.php",
+		"/C/Users/student/Desktop/Новая папка/index.html",
+		"/C/Users/student/Desktop/site/index.php",
+		"/C/Users/student/Desktop/site/footer.php",
+		"/C/Users/student/Desktop/Tema/css/style.css",
+		"/C/Users/student/Desktop/site/functions.php",
+		"/C/Users/student/Desktop/site/header.php",
+		"/C/Users/student/Desktop/Tema/index.html",
+		"/C/Users/student/Desktop/site/page.php",
+		"/C/Users/student/Desktop/site/style.css"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "composer.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 50.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

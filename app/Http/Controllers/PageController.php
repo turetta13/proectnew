@@ -15,8 +15,10 @@ class PageController extends Controller
 {
     public function index()
     {
+
         $productsrand=\App\Product::all()->random()->get();
-                return view('index',['productsrand'=>$productsrand]);
+
+            return view('index',['productsrand'=>$productsrand]);
     }
 
     public function acc()
@@ -87,15 +89,14 @@ class PageController extends Controller
     public function category($slug)
 
     {
-
         $category = \App\Category::where(
             ['is_publish' => 1, 'slug' => $slug])->firstOrFail();
-        $categories = \App\Category::all();
-
+        $products = \App\Product::where('category_id', $category->id)
+                        ->paginate(10);
+                        
         return view('category', [
             'category' => $category,
-            'categories' => $categories,
-
+            'products'=>$products
         ]);
     }
 

@@ -16,7 +16,7 @@
 </head>
 
 <body>
-{{--МЕНЮ ВЕРХНЕЕ--}}
+
 <div class="header">
     
     <div class="container">
@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="/" class="active">Главная</a></li>
-                    @include('partials.menu')
+                    <?php echo $__env->make('partials.menu', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 </ul>
             </div>
         </nav>
@@ -89,37 +89,37 @@
     </div>
 </div>
 
-{{--НАПОЛНЕНИЕ СТРАНИЦЫ--}}
+
 <div>
-    @yield ('content')
+    <?php echo $__env->yieldContent('content'); ?>
   </div>
 
 
-{{--НИЖНЕЕ МЕНЮ --}}
+
 <div>
     <div class="footer">
-        @yield ('footer')
+        <?php echo $__env->yieldContent('footer'); ?>
         <div class="container">
             <div class="footer-grids">
                 <div class="col-md-2 footer-grid">
                     <h4>Команда</h4>
                     <ul>
-                        <li><a href="{{route('info',['slug'=>'team'])}}">Наша команда</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'team'])); ?>">Наша команда</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 footer-grid">
                     <h4>Услуги</h4>
                     <ul>
-                        <li><a href="{{route('info',['slug'=>'support'])}}">Поддержка</a></li>
-                        <li><a href="{{route('info',['slug'=>'faq'])}}">FAQ</a></li>
-                        <li><a href="{{route('info',['slug'=>'contact'])}}">Связь</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'support'])); ?>">Поддержка</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'faq'])); ?>">FAQ</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'contact'])); ?>">Связь</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 footer-grid">
                     <h4>Инфо</h4>
                     <ul>
-                        <li><a href="{{route('info',['slug'=>'pay'])}}">Оплата</a></li>
-                        <li><a href="{{route('info',['slug'=>'delivery'])}}">Доставка</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'pay'])); ?>">Оплата</a></li>
+                        <li><a href="<?php echo e(route('info',['slug'=>'delivery'])); ?>">Доставка</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 footer-grid icons">

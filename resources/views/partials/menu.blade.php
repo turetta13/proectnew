@@ -1,7 +1,5 @@
 
-
-
-{{--@include('category')--}}
+@include('partials.category')
 
     {{--<li class="dropdown grid">--}}
         {{--<a href="#" class="dropdown-toggle list1" data-toggle="dropdown">{{$value->name}} <b class="caret"></b></a>--}}
