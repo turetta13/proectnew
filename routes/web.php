@@ -12,10 +12,11 @@ Route::get('/delivery', 'PageController@delivery')->name('delivery');
 Route::get('/support', 'PageController@sup')->name('support');
 
 Route::get('/categories/{slug}', 'PageController@category')->name('categories');
+
 Route::get('/info/{slug}', 'PageController@articles')->name('info');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/{id}', 'PageController@single')->name('single');
+Route::get('/product/{id}', 'PageController@single')->name('single');
 

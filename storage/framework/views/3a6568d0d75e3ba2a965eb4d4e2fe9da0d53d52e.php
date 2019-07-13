@@ -1,33 +1,4 @@
 <title>Sayadova Baker | Продукция</title>
-<head>
-    <title>Yummy | Продукция</title>
-    <!-- Custom Theme files -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <!-- //Custom Theme files -->
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link href="css/form.css" rel="stylesheet" type="text/css" media="all"/>
-    <!-- js -->
-    <script src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
-    <!-- //js -->
-    <!-- cart -->
-    <script src="js/simpleCart.min.js"></script>
-    <!-- cart -->
-    <!-- the jScrollPane script -->
-    <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
-    <script type="text/javascript" id="sourcecode">
-        $(function () {
-            $('.scroll-pane').jScrollPane();
-        });
-    </script>
-    <!-- //the jScrollPane script -->
-    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
-    <!-- the mousewheel plugin -->
-</head>
-
-
 <?php $__env->startSection('header'); ?>
 <?php $__env->stopSection(); ?>
 <!--products-->
@@ -56,7 +27,7 @@
                                 <h4><?php echo e($product->name); ?></h4>
                                 <span class="item_price">₴<?php echo e($product->price); ?></span>
 
-                                <div>ы
+                                <div>
                                     <?php echo e($product->shortdesc); ?>
 
                                 </div>
@@ -68,7 +39,7 @@
                             </div>
                         </div>
                     </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <td> <?php echo e($products->links()); ?></td>
 
             </div>
@@ -131,52 +102,52 @@
                         </div>
                         <p>
                             <!--script-->
-                        <script>
-                            $(document).ready(function () {
-                                $(".tab1 .single-bottom").hide();
-                                $(".tab2 .single-bottom").hide();
-                                $(".tab3 .single-bottom").hide();
-                                $(".tab4 .single-bottom").hide();
-                                $(".tab5 .single-bottom").hide();
+                            <script>
+                                $(document).ready(function () {
+                                    $(".tab1 .single-bottom").hide();
+                                    $(".tab2 .single-bottom").hide();
+                                    $(".tab3 .single-bottom").hide();
+                                    $(".tab4 .single-bottom").hide();
+                                    $(".tab5 .single-bottom").hide();
 
-                                $(".tab1 ul").click(function () {
-                                    $(".tab1 .single-bottom").slideToggle(300);
-                                    $(".tab2 .single-bottom").hide();
-                                    $(".tab3 .single-bottom").hide();
-                                    $(".tab4 .single-bottom").hide();
-                                    $(".tab5 .single-bottom").hide();
-                                })
-                                $(".tab2 ul").click(function () {
-                                    $(".tab2 .single-bottom").slideToggle(300);
-                                    $(".tab1 .single-bottom").hide();
-                                    $(".tab3 .single-bottom").hide();
-                                    $(".tab4 .single-bottom").hide();
-                                    $(".tab5 .single-bottom").hide();
-                                })
-                                $(".tab3 ul").click(function () {
-                                    $(".tab3 .single-bottom").slideToggle(300);
-                                    $(".tab4 .single-bottom").hide();
-                                    $(".tab5 .single-bottom").hide();
-                                    $(".tab2 .single-bottom").hide();
-                                    $(".tab1 .single-bottom").hide();
-                                })
-                                $(".tab4 ul").click(function () {
-                                    $(".tab4 .single-bottom").slideToggle(300);
-                                    $(".tab5 .single-bottom").hide();
-                                    $(".tab3 .single-bottom").hide();
-                                    $(".tab2 .single-bottom").hide();
-                                    $(".tab1 .single-bottom").hide();
-                                })
-                                $(".tab5 ul").click(function () {
-                                    $(".tab5 .single-bottom").slideToggle(300);
-                                    $(".tab4 .single-bottom").hide();
-                                    $(".tab3 .single-bottom").hide();
-                                    $(".tab2 .single-bottom").hide();
-                                    $(".tab1 .single-bottom").hide();
-                                })
-                            });
-                        </script>
-                        <!--//script -->
+                                    $(".tab1 ul").click(function () {
+                                        $(".tab1 .single-bottom").slideToggle(300);
+                                        $(".tab2 .single-bottom").hide();
+                                        $(".tab3 .single-bottom").hide();
+                                        $(".tab4 .single-bottom").hide();
+                                        $(".tab5 .single-bottom").hide();
+                                    })
+                                    $(".tab2 ul").click(function () {
+                                        $(".tab2 .single-bottom").slideToggle(300);
+                                        $(".tab1 .single-bottom").hide();
+                                        $(".tab3 .single-bottom").hide();
+                                        $(".tab4 .single-bottom").hide();
+                                        $(".tab5 .single-bottom").hide();
+                                    })
+                                    $(".tab3 ul").click(function () {
+                                        $(".tab3 .single-bottom").slideToggle(300);
+                                        $(".tab4 .single-bottom").hide();
+                                        $(".tab5 .single-bottom").hide();
+                                        $(".tab2 .single-bottom").hide();
+                                        $(".tab1 .single-bottom").hide();
+                                    })
+                                    $(".tab4 ul").click(function () {
+                                        $(".tab4 .single-bottom").slideToggle(300);
+                                        $(".tab5 .single-bottom").hide();
+                                        $(".tab3 .single-bottom").hide();
+                                        $(".tab2 .single-bottom").hide();
+                                        $(".tab1 .single-bottom").hide();
+                                    })
+                                    $(".tab5 ul").click(function () {
+                                        $(".tab5 .single-bottom").slideToggle(300);
+                                        $(".tab4 .single-bottom").hide();
+                                        $(".tab3 .single-bottom").hide();
+                                        $(".tab2 .single-bottom").hide();
+                                        $(".tab1 .single-bottom").hide();
+                                    })
+                                });
+                            </script>
+                            <!--//script -->
                     </div>
                 </section>
                 <section class="sky-form">
@@ -278,7 +249,7 @@
         </div>
     </div>
 
- <?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
 <!--//products-->
 <?php $__env->startSection('footer'); ?>
 <?php $__env->stopSection(); ?>

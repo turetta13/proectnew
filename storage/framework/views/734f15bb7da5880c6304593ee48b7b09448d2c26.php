@@ -1,33 +1,4 @@
 <title>Sayadova Baker | Товар</title>
-<!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<!-- //Custom Theme files -->
-<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-<!-- js -->
-<script src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
-<script src="js/imagezoom.js"></script>
-<!-- //js -->
-<!-- cart -->
-<script src="js/simpleCart.min.js"></script>
-<!-- cart -->
-<!-- FlexSlider -->
-<script defer src="js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen"/>
-<script>
-    // Can also be used with $(document).ready()
-    $(window).load(function () {
-        $('.flexslider').flexslider({
-            animation: "slide",
-            controlNav: "thumbnails"
-        });
-    });
-</script>
-<!--//FlexSlider -->
-
-
 
 <?php $__env->startSection('header'); ?>
 <?php $__env->stopSection(); ?>

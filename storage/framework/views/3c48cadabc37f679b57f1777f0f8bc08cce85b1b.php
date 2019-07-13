@@ -1,24 +1,50 @@
 <HTML>
 <head>
-      <!-- Custom Theme files -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="/text/html; charset=utf-8"/>
     <!-- //Custom Theme files -->
     <link href="/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="/css/form.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- js -->
     <script src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-3.1.1.min.js"></script>
     <!-- //js -->
     <!-- cart -->
-    <script src="js/simpleCart.min.js"> </script>
+    <script src="js/simpleCart.min.js"></script>
+    <script src="/js/imagezoom.js"></script>
     <!-- cart -->
+    <!-- the jScrollPane script -->
+    <script type="/text/javascript" src="/js/jquery.jscrollpane.min.js"></script>
+    <script type="/text/javascript" id="sourcecode">
+        $(function () {
+            $('.scroll-pane').jScrollPane();
+        });
+
+    </script>
+    <!-- //the jScrollPane script -->
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <!-- the mousewheel plugin -->
+
+    <!-- FlexSlider -->
+    <script defer src="/js/jquery.flexslider.js"></script>
+    <link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen"/>
+    <script>
+        // Can also be used with $(document).ready()
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
 </head>
 
 <body>
 
 <div class="header">
-    <?php echo $__env->yieldContent('header'); ?>
+
     <div class="container">
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
@@ -67,7 +93,8 @@
                             <input type="submit" id="login" value="Sign in">
                             <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Запомнить меня</i></label>
                         </fieldset>
-                        <p><a class="sign" href="/register">Регистрация</a> <span><a href="#">Напомнить пароль</a></span>
+                        <p><a class="sign" href="/register">Регистрация</a> <span><a
+                                        href="#">Напомнить пароль</a></span>
                         </p>
                     </form>
                 </div>
@@ -92,7 +119,7 @@
 
 <div>
     <?php echo $__env->yieldContent('content'); ?>
-  </div>
+</div>
 
 
 

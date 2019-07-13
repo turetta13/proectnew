@@ -96,7 +96,7 @@ class PageController extends Controller
                         
         return view('category', [
             'category' => $category,
-            'products'=>$products
+            'products'=>$products,
         ]);
     }
 
