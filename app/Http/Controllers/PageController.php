@@ -16,9 +16,16 @@ class PageController extends Controller
     public function index()
     {
 
-        $productsrand=\App\Product::all()->random()->get();
+        $productsrand=\App\Product::inRandomOrder()->first();
 
-            return view('index',['productsrand'=>$productsrand]);
+
+        $models = Product::all(); // or use a ::where()->get();
+
+// And the actual randomisation line
+        $productsrand2 = $models->shuffle()->slice(0,5);
+
+
+            return view('index',['productsrand'=>$productsrand, 'productsrand2'=>$productsrand2]);
     }
 
     public function acc()

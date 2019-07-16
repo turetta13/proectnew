@@ -1,8 +1,9 @@
 @extends ('layout.main')
-
+<title>S.Baker | {{$category->name}}</title>
 @section('header')
+
 @endsection
-<!--products-->
+
 @section('content')
     <div class="products">
         <div class="container">

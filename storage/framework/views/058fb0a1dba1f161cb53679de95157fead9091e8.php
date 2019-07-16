@@ -1,6 +1,8 @@
+<title>S.Baker | <?php echo e($category->name); ?></title>
 <?php $__env->startSection('header'); ?>
+
 <?php $__env->stopSection(); ?>
-<!--products-->
+
 <?php $__env->startSection('content'); ?>
     <div class="products">
         <div class="container">
