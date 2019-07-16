@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div class="header-right login">
-                <a href="/register"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                <a href="{{route('login')}}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
                 <div id="loginBox">
                     <form id="loginForm">
                         <fieldset id="body">
@@ -95,7 +95,7 @@
                             <input type="submit" id="login" value="Sign in">
                             <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Запомнить меня</i></label>
                         </fieldset>
-                        <p><a class="sign" href="/register">Регистрация</a> <span><a
+                        <p><a class="sign" href="{{route('register')}}">Регистрация</a> <span><a
                                         href="#">Напомнить пароль</a></span>
                         </p>
                     </form>

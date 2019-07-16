@@ -10,21 +10,21 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('profile.save') }}">
+                        <form method="POST" action="{{route('profile.save')}}">
                             @csrf
                                    {{--NAME--}}
                             <div class="form-group row">
                                 <label for="name" class="col-sm-4 col-form-label text-md-right">
-                                Имя </label>
+                               Изменить имя </label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="text"
-                                           class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="name" value="{{ old('email') }}" required autofocus>
+                                    <input id="name" type="text"
+                                           class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                           name="name" value="{{$user->name}}" >
 
-                                    @if ($errors->has('email'))
+                                    @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -33,12 +33,12 @@
 <br>
                             {{--EMAIL--}}
                             <div class="form-group row">
-                                <label for="email" class="col-sm-4 col-form-label text-md-right">Електронная почта</label>
+                                <label for="email" class="col-sm-4 col-form-label text-md-right">Изменить електронную почту</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email"
+                                    <input id="email" type="text"
                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{$user->name}}" required autofocus>
+                                           name="email" value="{{$user->email}}" >
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
@@ -51,16 +51,16 @@
                             {{--PHONE--}}
                             <div class="form-group row">
                                 <label for="phone" class="col-sm-4 col-form-label text-md-right">
-                                    Телефон </label>
+                                    Изменить телефон </label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="text"
-                                           class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ old('email') }}" required autofocus>
+                                    <input id="phone" type="text"
+                                           class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
+                                           name="phone" value="{{$user->phone}}">
 
-                                    @if ($errors->has('email'))
+                                    @if ($errors->has('phone'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -69,12 +69,13 @@
  <br>
                             <div class="form-group row">
                                 <label for="password"
-                                       class="col-md-4 col-form-label text-md-right">Пароль</label>
+                                       class="col-md-4 col-form-label text-md-right">
+                                    Изменить пароль</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password"
+                                    <input type="password"
                                            class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                           name="password" required>
+                                           name="password" autocomplete="off" value="">
 
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">

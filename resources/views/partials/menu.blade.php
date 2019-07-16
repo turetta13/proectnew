@@ -1,101 +1,30 @@
-@include('partials.category')
+@foreach ($categories->where('parent_id',0) as $cat)
+    <li class="dropdown grid">
+        <a href="{{route('categories',['slug'=>$cat->slug])}}" class="dropdown-toggle list1"
+           data-toggle="dropdown">{{$cat->name}} <b class="caret"></b></a>
+        <ul class="dropdown-menu multi-column columns-1">
+            <div class="row">
+                <div class="col-sm-10">
+                    <ul class="multi-column-dropdown">
 
-{{--<li class="dropdown grid">--}}
-    {{--<a href="#" class="dropdown-toggle list1" data-toggle="dropdown">{{$value->name}} <b class="caret"></b></a>--}}
-    {{--<ul class="dropdown-menu multi-column columns-1">--}}
-        {{--<div class="row">--}}
-            {{--<div class="col-sm-10">--}}
-                {{--<ul class="multi-column-dropdown">--}}
+                        @if ( $cat->child()->count()>0)
+                            @foreach ($cat->child()->get() as $cat2)
 
-                    {{--@if ($value->child()->coint()>0)--}}
-                        {{--@foreach ($value->child()->get() as $cat)--}}
+                                <li><a class="list"
+                                       href="{{route('categories',['slug'=>$cat2->slug])}}"> {{$cat2->name}}</a>
 
-                            {{--<li><a class="list"--}}
-                                   {{--href="{{route('categories',['slug'=>$cat->slug])}}"> dsfsdf </a>--}}
-                                {{--@endforeach--}}
-                                {{--@endif--}}
-                            {{--</li>--}}
-                            {{--</li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</ul>--}}
-{{--</li>--}}
+                                    @endforeach
+                                    @endif
 
-
-{{--@if(isset($category['name']))--}}
-    {{--<li class="dropdown grid">--}}
-        {{--<a href="#" class="dropdown-toggle list1" data-toggle="dropdown">{{$category['name']}} <b class="caret"></b></a>--}}
-        {{--<ul class="dropdown-menu multi-column columns-1">--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-sm-10">--}}
-                    {{--<ul class="multi-column-dropdown">--}}
-                        {{--@foreach($category['children'] as $url => $category)--}}
-                            {{--<li><a class="list" href="/{{$url}}"> {{$category}}</a></li>--}}
-                        {{--@endforeach--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</ul>--}}
-    {{--</li>--}}
-{{--@else--}}
-
-    {{--<li class="dropdown">--}}
-        {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Торты<b class="caret"></b></a>--}}
-        {{--<ul class="dropdown-menu multi-column columns-4">--}}
-            {{--<div class="row">--}}
-                {{--@foreach($category as $url => $categor)--}}
-                    {{--<div class="col-sm-4">--}}
-                        {{--<h4>{{$categor['name']}}</h4>--}}
-                        {{--<ul class="multi-column-dropdown">--}}
-                            {{--@foreach($categor['children'] as $url => $category)--}}
-                                {{--<li><a class="list" href="/{{$url}}"> {{$category}}</a></li>--}}
-                            {{--@endforeach--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
-                {{--@endforeach--}}
-            {{--</div>--}}
-        {{--</ul>--}}
-    {{--</li>--}}
-{{--@endif--}}
-
-{{--@endforeach--}}
+                                </li>
+                                </li>
+                    </ul>
+                </div>
+            </div>
+        </ul>
 
 
-{{--@foreach($menu as $key => $category)--}}
+@endforeach
 
-    {{--<li class="dropdown grid">--}}
-        {{--<a href="#" class="dropdown-toggle list1" data-toggle="dropdown">{{$category['name']}} <b class="caret"></b></a>--}}
-        {{--<ul class="dropdown-menu multi-column columns-1">--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-sm-10">--}}
-                    {{--<ul class="multi-column-dropdown">--}}
-                        {{--@foreach(\App\Category::all()  as  $category)--}}
-                            {{--<li><a class="list"--}}
-                                   {{--href="{{route('categories.index',['slug'=>$category->slug])}}"> {{$category->name}}</a>--}}
-                            {{--</li>--}}
-                        {{--@endforeach--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</ul>--}}
-    {{--</li>--}}
-{{--@endforeach--}}
-
-{{--<li class="dropdown grid">--}}
-    {{--<a href="#" class="dropdown-toggle list1" data-toggle="dropdown">ИЗ БД <b class="caret"></b></a>--}}
-    {{--<ul class="dropdown-menu multi-column columns-1">--}}
-        {{--<div class="row">--}}
-            {{--<div class="col-sm-10">--}}
-                {{--<ul class="multi-column-dropdown">--}}
-                    {{--@foreach(\App\Category::all()  as  $category)--}}
-                        {{--<li><a class="list"--}}
-                               {{--href="{{route('categories.index',['slug'=>$category->slug])}}"> {{$category->name}}</a>--}}
-                        {{--</li>--}}
-                    {{--@endforeach--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</ul>--}}
-{{--</li>--}}
-{{--@endforeach--}}
+@section('footer')
+@stop

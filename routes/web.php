@@ -20,3 +20,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 //АДМИНКА
 Route::get('/profile/edit', 'HomeController@profileEdit')->name('profile.edit');
 Route::post('/profile/save', 'HomeController@profileSave')->name('profile.save');
+Route::get('/profile/list', 'HomeController@profileList')->name('profile.list');

@@ -20,7 +20,7 @@
                                                                            class="img-responsive" alt=""/>
                         <div class="gallery-info">
                             <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Подробнее</p>
-                            <a class="shop" href="/single">подробнее</a>
+                            <a class="shop" href="{{route('single',[$productsrand->id])}}">подробнее</a>
                             <div class="clearfix"></div>
                         </div>
                     </a>

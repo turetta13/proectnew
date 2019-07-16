@@ -86,7 +86,7 @@
                                 <button type="submit" class="btn">
                                     {{ __('Регистрация') }}
                                 </button>
-                                 <a href="/login">Я зарегистрирован</a></li>
+                                 <a href="{{route('loggin')}}">Я зарегистрирован</a></li>
 
                             </div>
                         </div>

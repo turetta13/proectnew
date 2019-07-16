@@ -86,7 +86,7 @@
                                     <?php echo e(__('Регистрация')); ?>
 
                                 </button>
-                                 <a href="/login">Я зарегистрирован</a></li>
+                                 <a href="<?php echo e(route('login')); ?>">Я зарегистрирован</a></li>
 
                             </div>
                         </div>
