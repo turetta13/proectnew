@@ -17,7 +17,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-//АДМИНКА
-Route::get('/profile/edit', 'HomeController@profileEdit')->name('profile.edit');
-Route::post('/profile/save', 'HomeController@profileSave')->name('profile.save');
-Route::get('/profile/list', 'HomeController@profileList')->name('profile.list');
+//АДМИНКА ПОЛЬЗОВАТЕЛЕЙ
+Route::get('/profile/edit/{id}', 'HomeController@profileEdit')->name('profile.edit');
+Route::post('/profile/save/{id}', 'HomeController@profileSave')->name('profile.save');
+Route::get('/admin/list', 'HomeController@adminList')->name('admin.list');
+Route::get('/profile/delete/{id}', 'HomeController@profileDelete')->name('profile.delete');
+//Route::get('/profile/create/{id}', 'HomeController@')->name('profile.create');profileCreate
+
+
+//АДМИНКА ТОВАРОВ
+Route::get('/admin/products', 'ProductEditController@adminProducts')->name('admin.products');

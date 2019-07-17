@@ -19,7 +19,7 @@
                             </div>
                         @endif
                         @if ($user)
-                            <table>
+                            <table class="table">
 
                                 <tr>
                                     <th>Имя:</th>
@@ -42,7 +42,7 @@
                             <BR>
 
 
-                            <a href="{{route('profile.edit')}}">
+                            <a href="{{route('profile.edit',[$user->id])}}">
                                 <button type="submit" class="btn">
                                     Редактировать данные
                                 </button>
@@ -52,7 +52,7 @@
                         <p>
                             <a href="{{route('login')}}">
                                 <button type="submit" class="btn">
-                                    Авториизироваться
+                                    Авторизоваться
                                 </button>
                             </a>
                         @endif

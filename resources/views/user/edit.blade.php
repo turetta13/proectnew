@@ -1,26 +1,40 @@
 @extends('layout.main')
 
 @section('content')
+
     <br>
     <h2 class="hdng">Редактировать профиль </h2>
     <br>
     <div class="container">
+        {{--ВСПЛЫВЫЮЩЕЕ УВЕДОМЛЕНИЕ--}}
+
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
+
         <div class="row justify-content-center">
+
             <div class="col-md-8">
+
                 <div class="card">
 
                     <div class="card-body">
-                        <form method="POST" action="{{route('profile.save')}}">
+
+                        <form method="POST" action="{{route('profile.save',[$user->id])}}">
                             @csrf
-                                   {{--NAME--}}
+
+                            {{--NAME--}}
                             <div class="form-group row">
                                 <label for="name" class="col-sm-4 col-form-label text-md-right">
-                               Изменить имя </label>
+                                    Изменить имя </label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text"
                                            class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                           name="name" value="{{$user->name}}" >
+                                           name="name" value="{{$user->name}}">
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -30,24 +44,27 @@
                                 </div>
                             </div>
 
-<br>
+                            <br>
                             {{--EMAIL--}}
+
                             <div class="form-group row">
-                                <label for="email" class="col-sm-4 col-form-label text-md-right">Изменить електронную почту</label>
+                                <label for="email" class="col-sm-4 col-form-label text-md-right">Изменить електронную
+                                    почту</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="text"
                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{$user->email}}" >
+                                           name="email" value="{{$user->email}}">
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
+
                                     @endif
                                 </div>
                             </div>
-<br>
+                            <br>
                             {{--PHONE--}}
                             <div class="form-group row">
                                 <label for="phone" class="col-sm-4 col-form-label text-md-right">
@@ -66,7 +83,8 @@
                                 </div>
                             </div>
 
- <br>
+                            <br>
+                            {{--PASSWORD--}}
                             <div class="form-group row">
                                 <label for="password"
                                        class="col-md-4 col-form-label text-md-right">
@@ -84,13 +102,37 @@
                                     @endif
                                 </div>
                             </div>
+<br>
+                            {{--ROLE--}}
 
-                                                       <br>
+                            <div class="form-group row">
+                                <label for="role" class="col-sm-4 col-form-label text-md-right">
+                                    Изменить статус </label>
+
+                                <div class="col-md-6">
+                                    <input id="role" type="text"
+                                           class="form-control{{ $errors->has('role') ? ' is-invalid' : '' }}"
+                                           name="role" value="{{$user->role}}">
+
+                                    @if ($errors->has('role'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('role') }}</strong>
+                                    </span>
+                                    @endif
+
+
+                                </div>
+                            </div>
+
+                            <br>
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn">
-                                      Сохранить
+                                        Сохранить
                                     </button>
+
+                                    <br>
+                                    <br>
 
 
                                 </div>
