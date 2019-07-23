@@ -11,9 +11,9 @@ class Category extends Authenticatable
 {
     protected $table = 'categories';
 
-//    protected $fillable = [
-//        'name', 'description', 'is_publish', 'parent_id', 'slug'
-//    ];
+    protected $fillable = [
+        'name', 'description', 'is_publish', 'parent_id', 'slug'
+    ];
 
     public function child()
     {

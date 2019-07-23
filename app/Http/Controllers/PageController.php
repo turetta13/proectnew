@@ -16,16 +16,16 @@ class PageController extends Controller
     public function index()
     {
 
-        $productsrand=\App\Product::inRandomOrder()->first();
+        $productsrand = \App\Product::inRandomOrder()->first();
 
 
         $models = Product::all(); // or use a ::where()->get();
 
 // And the actual randomisation line
-        $productsrand2 = $models->shuffle()->slice(0,5);
+        $productsrand2 = $models->shuffle()->slice(0, 5);
 
 
-            return view('index',['productsrand'=>$productsrand, 'productsrand2'=>$productsrand2]);
+        return view('index', ['productsrand' => $productsrand, 'productsrand2' => $productsrand2]);
     }
 
     public function acc()
@@ -47,10 +47,10 @@ class PageController extends Controller
     {
         $products = \App\Product::where('publish', 1);
 
-              return view('products', 
+        return view('products',
             [
-            'product' => $products, 'products' => Product::paginate(7), 
-               ]);
+                'product' => $products, 'products' => Product::paginate(7),
+            ]);
 
 
     }
@@ -99,49 +99,12 @@ class PageController extends Controller
         $category = \App\Category::where(
             ['is_publish' => 1, 'slug' => $slug])->firstOrFail();
         $products = \App\Product::where('category_id', $category->id)
-                        ->paginate(10);
-                        
+            ->paginate(10);
+
         return view('category', [
             'category' => $category,
-            'products'=>$products,
+            'products' => $products,
         ]);
     }
-
-//    public function cat($slug)
-//    {
-//        $category = \App\Category::where([
-//            'slug' => $slug
-//        ])->first();
-//        // dd($category->name);
-//        return view('index');
-//    }
-
-
 }
-
-
-//    public function cat($slug)
-//    {
-//        $categories = \App\Category::where('is_publish', 1)->get();
-//        $menu = [];
-//        foreach ($categories as $key => $category) {
-//            $menu[$category->id] = [
-//                'name' => $category->name,
-//                'slug' => $category->slug,
-//                'parent_id' => $category->parent_id
-//            ];
-//            if ($categories->where('parent_id,', $category->id)->get()) {
-//                $menu[$category->id]['subcategories'] = [];
-//                foreach ($categories->where('parent_id,', $category->id)->get() as $key => $value) {
-//                    $menu[$category->id]['subcategories'][] =
-//                        [
-//                            'name' => $category->name,
-//                            'slug' => $category->slug,
-//                            'parent_id' => $category->parent_id
-//                        ];
-//                }
-//            }
-//        }
-//        return view('index');
-//    }
 

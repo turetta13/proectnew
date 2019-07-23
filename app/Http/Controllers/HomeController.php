@@ -24,11 +24,11 @@ class HomeController extends Controller
     }
 
     public function adminList()
-{
-    $users = User::paginate(10);
+    {
+        $users = User::paginate(10);
 //       dd($users);
-    return view('admin.list', ['users' => $users]);
-}
+        return view('admin.list', ['users' => $users]);
+    }
 
     public function profileEdit($id)
     {
@@ -42,21 +42,29 @@ class HomeController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect()->back()->with('success','Успешно удалено!');
+        return redirect()->back()->with('success', 'Успешно удалено!');
     }
 
-//    public function profileCreate()
-//    {
-//        $user = new User();
-//
-//        return view('user.edit', ['user' => $user]);
-//    }
+    public function profileCreate()
+    {
+        $user = new User();
+
+        return view('user.edit', ['user' => $user]);
+    }
 
 
-
-    public function profileSave($id,Request $request)
+    public function profileSave($id = null, Request $request)
     {
 //ВАЛИДАЦИЯ РЕДАКТИРОВАНИЯ ДАННЫХ ПОЛЬЗОВАТЕЛЕМ
+        if ($id) {
+            $user = User::find($id);
+
+        } else {
+            $user = new User();
+            $user->password = \Hash::make($request->password);
+
+        }
+
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -64,17 +72,17 @@ class HomeController extends Controller
             'role' => 'numeric',
         ]);
 
-        $user = User::find($id);
-        $user->fill($request->only('name', 'email', 'phone','role'));
+
+        $user->fill($request->only('name', 'email', 'phone', 'role'));
         if ($request->password) {
             $user->password = \Hash::make($request->password);
         }
-
         $user->save();
-        return redirect()->back()->with('success','Данные изменены');
+
+        return redirect()->back()->with('success', 'Данные изменены');
+
+
     }
-
-
 }
 
 

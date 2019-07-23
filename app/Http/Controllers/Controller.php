@@ -14,6 +14,6 @@ class Controller extends BaseController
 
     public function __construct(){
 
-    	\View::share('categories', Category::all());
+    	\View::share('categories', Category::where('is_publish', '=', 1)->get());
     }
 }

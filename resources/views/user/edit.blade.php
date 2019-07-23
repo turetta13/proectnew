@@ -3,7 +3,11 @@
 @section('content')
 
     <br>
+    @if($user->role===\App\User::ROLE_ADMIN)
+        <h2 class="hdng">Создать аккаунт </h2>
+   @else
     <h2 class="hdng">Редактировать профиль </h2>
+    @endif
     <br>
     <div class="container">
         {{--ВСПЛЫВЫЮЩЕЕ УВЕДОМЛЕНИЕ--}}
@@ -23,7 +27,13 @@
 
                     <div class="card-body">
 
-                        <form method="POST" action="{{route('profile.save',[$user->id])}}">
+                        <form method="POST"
+                              @if(isset($user))
+                              action="{{route('profile.save',[$user->id])}}"
+                              @else
+                              action="{{route('profile.save')}}"
+                                @endif
+                        >
                             @csrf
 
                             {{--NAME--}}
@@ -34,7 +44,7 @@
                                 <div class="col-md-6">
                                     <input id="name" type="text"
                                            class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                           name="name" value="{{$user->name}}">
+                                           name="name" value="@if(isset($user)){{$user->name}}@endif">
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -54,7 +64,7 @@
                                 <div class="col-md-6">
                                     <input id="email" type="text"
                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{$user->email}}">
+                                           name="email" value="@if(isset($user)){{$user->email}}@endif">
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
@@ -73,7 +83,7 @@
                                 <div class="col-md-6">
                                     <input id="phone" type="text"
                                            class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
-                                           name="phone" value="{{$user->phone}}">
+                                           name="phone" value="@if(isset($user)){{$user->phone}}@endif">
 
                                     @if ($errors->has('phone'))
                                         <span class="invalid-feedback" role="alert">
@@ -102,9 +112,9 @@
                                     @endif
                                 </div>
                             </div>
-<br>
+                            <br>
                             {{--ROLE--}}
-
+@if(!isset($user->id) || $user->role===\App\User::ROLE_ADMIN)
                             <div class="form-group row">
                                 <label for="role" class="col-sm-4 col-form-label text-md-right">
                                     Изменить статус </label>
@@ -120,7 +130,7 @@
                                     </span>
                                     @endif
 
-
+@endif
                                 </div>
                             </div>
 

@@ -69,9 +69,14 @@
                                         {{ __('Войти') }}
                                     </button>
 
+                                    <a class="btn btn-link" href="{{ route('register') }}">
+                                        {{ __('Зарегистрироваться') }}
+                                    </a>
+
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Забыли пароль?') }}
                                     </a>
+
                                 </div>
                             </div>
                         </form>

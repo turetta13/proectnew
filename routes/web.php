@@ -19,11 +19,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //АДМИНКА ПОЛЬЗОВАТЕЛЕЙ
 Route::get('/profile/edit/{id}', 'HomeController@profileEdit')->name('profile.edit');
-Route::post('/profile/save/{id}', 'HomeController@profileSave')->name('profile.save');
+Route::post('/profile/save/{id?}', 'HomeController@profileSave')->name('profile.save');
 Route::get('/admin/list', 'HomeController@adminList')->name('admin.list');
 Route::get('/profile/delete/{id}', 'HomeController@profileDelete')->name('profile.delete');
-//Route::get('/profile/create/{id}', 'HomeController@')->name('profile.create');profileCreate
+Route::get('/profile/create/', 'HomeController@profileCreate')->name('profile.create');
 
 
 //АДМИНКА ТОВАРОВ
 Route::get('/admin/products', 'ProductEditController@adminProducts')->name('admin.products');
+
+//АДМИНКА ГЛАВНОГО МЕНЮ
+Route::get('/admin/menu', 'MenuEditController@adminMenu')->name('admin.menu');
+Route::get('/admin/menu/edit/{id}', 'MenuEditController@menuEdit')->name('menu.edit');
+Route::post('/admin/menu/save/{id?}', 'MenuEditController@menuSave')->name('menu.save');
+Route::get('/admin/menu/delete/{id}', 'MenuEditController@menuDelete')->name('menu.delete');
+Route::get('/admin/menu/create/', 'MenuEditController@menuCreate')->name('menu.create');

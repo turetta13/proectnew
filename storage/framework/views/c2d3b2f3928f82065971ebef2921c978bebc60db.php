@@ -1,7 +1,11 @@
 <?php $__env->startSection('content'); ?>
 
     <br>
+    <?php if($user->role===\App\User::ROLE_ADMIN): ?>
+        <h2 class="hdng">Создать аккаунт </h2>
+   <?php else: ?>
     <h2 class="hdng">Редактировать профиль </h2>
+    <?php endif; ?>
     <br>
     <div class="container">
         
@@ -21,7 +25,13 @@
 
                     <div class="card-body">
 
-                        <form method="POST" action="<?php echo e(route('profile.save',[$user->id])); ?>">
+                        <form method="POST"
+                              <?php if(isset($user)): ?>
+                              action="<?php echo e(route('profile.save',[$user->id])); ?>"
+                              <?php else: ?>
+                              action="<?php echo e(route('profile.save')); ?>"
+                                <?php endif; ?>
+                        >
                             <?php echo csrf_field(); ?>
 
                             
@@ -32,7 +42,7 @@
                                 <div class="col-md-6">
                                     <input id="name" type="text"
                                            class="form-control<?php echo e($errors->has('name') ? ' is-invalid' : ''); ?>"
-                                           name="name" value="<?php echo e($user->name); ?>">
+                                           name="name" value="<?php if(isset($user)): ?><?php echo e($user->name); ?><?php endif; ?>">
 
                                     <?php if($errors->has('name')): ?>
                                         <span class="invalid-feedback" role="alert">
@@ -52,7 +62,7 @@
                                 <div class="col-md-6">
                                     <input id="email" type="text"
                                            class="form-control<?php echo e($errors->has('email') ? ' is-invalid' : ''); ?>"
-                                           name="email" value="<?php echo e($user->email); ?>">
+                                           name="email" value="<?php if(isset($user)): ?><?php echo e($user->email); ?><?php endif; ?>">
 
                                     <?php if($errors->has('email')): ?>
                                         <span class="invalid-feedback" role="alert">
@@ -71,7 +81,7 @@
                                 <div class="col-md-6">
                                     <input id="phone" type="text"
                                            class="form-control<?php echo e($errors->has('phone') ? ' is-invalid' : ''); ?>"
-                                           name="phone" value="<?php echo e($user->phone); ?>">
+                                           name="phone" value="<?php if(isset($user)): ?><?php echo e($user->phone); ?><?php endif; ?>">
 
                                     <?php if($errors->has('phone')): ?>
                                         <span class="invalid-feedback" role="alert">
@@ -100,9 +110,9 @@
                                     <?php endif; ?>
                                 </div>
                             </div>
-<br>
+                            <br>
                             
-
+<?php if(!isset($user->id) || $user->role===\App\User::ROLE_ADMIN): ?>
                             <div class="form-group row">
                                 <label for="role" class="col-sm-4 col-form-label text-md-right">
                                     Изменить статус </label>
@@ -118,7 +128,7 @@
                                     </span>
                                     <?php endif; ?>
 
-
+<?php endif; ?>
                                 </div>
                             </div>
 
