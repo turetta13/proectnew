@@ -49,6 +49,11 @@
                                     <input id="slug" type="text"
                                            class="form-control"
                                            name="slug" value="<?php echo e($categories->slug); ?>">
+                                    <?php if($errors->has('slug')): ?>
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo e($errors->first('slug')); ?></strong>
+                                    </span>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 

@@ -1,10 +1,10 @@
 <?php $__env->startSection('content'); ?>
 
     <br>
-    <?php if($user->role===\App\User::ROLE_ADMIN): ?>
+    <?php if(!isset($user->id)): ?>
         <h2 class="hdng">Создать аккаунт </h2>
-   <?php else: ?>
-    <h2 class="hdng">Редактировать профиль </h2>
+    <?php else: ?>
+        <h2 class="hdng">Редактировать профиль </h2>
     <?php endif; ?>
     <br>
     <div class="container">
@@ -25,13 +25,12 @@
 
                     <div class="card-body">
 
-                        <form method="POST"
+                        <form method="POST" enctype="multipart/form-data"
                               <?php if(isset($user)): ?>
                               action="<?php echo e(route('profile.save',[$user->id])); ?>"
                               <?php else: ?>
                               action="<?php echo e(route('profile.save')); ?>"
-                                <?php endif; ?>
-                        >
+                                <?php endif; ?> >
                             <?php echo csrf_field(); ?>
 
                             
@@ -90,6 +89,24 @@
                                     <?php endif; ?>
                                 </div>
                             </div>
+<br>
+                            
+                            <div class="form-group row">
+                                <label for="phone" class="col-sm-4 col-form-label text-md-right">
+                                    Добавить Аватар</label>
+
+                                <div class="col-md-6">
+                                    <input id="avatar" type="file"
+                                           class="form-control<?php echo e($errors->has('avatar') ? ' is-invalid' : ''); ?>"
+                                           name="avatar" >
+
+                                    <?php if($errors->has('avatar')): ?>
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo e($errors->first('avatar')); ?></strong>
+                                    </span>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
 
                             <br>
                             
@@ -112,39 +129,45 @@
                             </div>
                             <br>
                             
-<?php if(!isset($user->id) || $user->role===\App\User::ROLE_ADMIN): ?>
-                            <div class="form-group row">
-                                <label for="role" class="col-sm-4 col-form-label text-md-right">
-                                    Изменить статус </label>
+                            <?php if(!isset($user->id) || $user->isAdmin()): ?>
+                                <div class="form-group row">
+                                    <label for="role" class="col-sm-4 col-form-label text-md-right">
+                                        Изменить статус </label>
 
-                                <div class="col-md-6">
-                                    <input id="role" type="text"
-                                           class="form-control<?php echo e($errors->has('role') ? ' is-invalid' : ''); ?>"
-                                           name="role" value="<?php echo e($user->role); ?>">
+                                    <div class="col-md-6">
+                                        <input id="role" type="text"
+                                               class="form-control<?php echo e($errors->has('role') ? ' is-invalid' : ''); ?>"
+                                               name="role" value="<?php echo e($user->role); ?>">
 
-                                    <?php if($errors->has('role')): ?>
-                                        <span class="invalid-feedback" role="alert">
+                                        <?php if($errors->has('role')): ?>
+                                            <span class="invalid-feedback" role="alert">
                                         <strong><?php echo e($errors->first('role')); ?></strong>
                                     </span>
-                                    <?php endif; ?>
+                                        <?php endif; ?>
 
-<?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <br>
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn">
-                                        Сохранить
-                                    </button>
+                                <br>
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-8 offset-md-4">
+                                        <button type="submit" class="btn">
+                                            Сохранить
+                                        </button>
 
-                                    <br>
-                                    <br>
+                                        <?php if(!isset($user->id)): ?>
+                                            <a href="<?php echo e(route('admin.list')); ?>">назад</a>
+                                        <?php else: ?>
+                                            <a href="<?php echo e(route('home')); ?>">назад </a>
+                                        <?php endif; ?>
+
+                                        <br>
+                                        <br>
 
 
+                                    </div>
                                 </div>
-                            </div>
                         </form>
                     </div>
                 </div>

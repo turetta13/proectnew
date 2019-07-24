@@ -47,25 +47,30 @@ class MenuEditController extends Controller
     public function menuSave($id = null, Request $request)
     {
 //ВАЛИДАЦИЯ РЕДАКТИРОВАНИЯ ДАННЫХ ПОЛЬЗОВАТЕЛЕМ
-        if ($id) {
-            $user = Category::find($id);
+        $menu = Category::find($id);
 
-        } else {
-            $user = new Category();
+        $message = 'успешно отредактировано';
 
+        if ($menu===null){
+            $menu = new Category();
+            $message = 'категория'.' '. $menu->name .'успешно создана';
         }
+
         $validatedData = $request->validate([
             'parent_id' => 'required',
+            'slug' => 'unique:categories',
             'is_publish' => 'boolean',
 
         ]);
 
-        $user->fill($request->only('id', 'name', 'slug', 'description', 'parent_id', 'is_publish'));
+        $menu->fill($request->only('id', 'name', 'slug', 'description', 'parent_id', 'is_publish'));
 
-        $user->save();
+        $menu->save();
 
-        return redirect()->back()->with('success', 'Данные изменены');
+        return redirect()->back()->with('success', $message);
 
 
     }
 }
+
+

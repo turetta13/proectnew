@@ -70,7 +70,7 @@
                                     </button>
 
                                     <a class="btn btn-link" href="{{ route('register') }}">
-                                        {{ __('Зарегистрироваться') }}
+                                        {{ __('Регистрация') }}
                                     </a>
 
                                     <a class="btn btn-link" href="{{ route('password.request') }}">

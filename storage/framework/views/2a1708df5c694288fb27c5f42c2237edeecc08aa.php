@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
 
     <br>
-    <h2 class="hdng">Добавить категорию в меню меню </h2>
+    <h2 class="hdng">Добавить категорию в меню</h2>
 
     <br>
     <div class="container">

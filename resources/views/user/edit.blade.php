@@ -3,10 +3,10 @@
 @section('content')
 
     <br>
-    @if($user->role===\App\User::ROLE_ADMIN)
+    @if(!isset($user->id))
         <h2 class="hdng">Создать аккаунт </h2>
-   @else
-    <h2 class="hdng">Редактировать профиль </h2>
+    @else
+        <h2 class="hdng">Редактировать профиль </h2>
     @endif
     <br>
     <div class="container">
@@ -27,13 +27,12 @@
 
                     <div class="card-body">
 
-                        <form method="POST"
+                        <form method="POST" enctype="multipart/form-data"
                               @if(isset($user))
                               action="{{route('profile.save',[$user->id])}}"
                               @else
                               action="{{route('profile.save')}}"
-                                @endif
-                        >
+                                @endif >
                             @csrf
 
                             {{--NAME--}}
@@ -92,6 +91,24 @@
                                     @endif
                                 </div>
                             </div>
+<br>
+                            {{--AVATAR--}}
+                            <div class="form-group row">
+                                <label for="phone" class="col-sm-4 col-form-label text-md-right">
+                                    Добавить Аватар</label>
+
+                                <div class="col-md-6">
+                                    <input id="avatar" type="file"
+                                           class="form-control{{ $errors->has('avatar') ? ' is-invalid' : '' }}"
+                                           name="avatar" >
+
+                                    @if ($errors->has('avatar'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('avatar') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
 
                             <br>
                             {{--PASSWORD--}}
@@ -114,39 +131,45 @@
                             </div>
                             <br>
                             {{--ROLE--}}
-@if(!isset($user->id) || $user->role===\App\User::ROLE_ADMIN)
-                            <div class="form-group row">
-                                <label for="role" class="col-sm-4 col-form-label text-md-right">
-                                    Изменить статус </label>
+                            @if(!isset($user->id) || $user->isAdmin())
+                                <div class="form-group row">
+                                    <label for="role" class="col-sm-4 col-form-label text-md-right">
+                                        Изменить статус </label>
 
-                                <div class="col-md-6">
-                                    <input id="role" type="text"
-                                           class="form-control{{ $errors->has('role') ? ' is-invalid' : '' }}"
-                                           name="role" value="{{$user->role}}">
+                                    <div class="col-md-6">
+                                        <input id="role" type="text"
+                                               class="form-control{{ $errors->has('role') ? ' is-invalid' : '' }}"
+                                               name="role" value="{{$user->role}}">
 
-                                    @if ($errors->has('role'))
-                                        <span class="invalid-feedback" role="alert">
+                                        @if ($errors->has('role'))
+                                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('role') }}</strong>
                                     </span>
-                                    @endif
+                                        @endif
 
-@endif
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
 
-                            <br>
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn">
-                                        Сохранить
-                                    </button>
+                                <br>
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-8 offset-md-4">
+                                        <button type="submit" class="btn">
+                                            Сохранить
+                                        </button>
 
-                                    <br>
-                                    <br>
+                                        @if(!isset($user->id))
+                                            <a href="{{route('admin.list')}}">назад</a>
+                                        @else
+                                            <a href="{{route('home')}}">назад </a>
+                                        @endif
+
+                                        <br>
+                                        <br>
 
 
+                                    </div>
                                 </div>
-                            </div>
                         </form>
                     </div>
                 </div>

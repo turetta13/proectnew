@@ -18,6 +18,7 @@
                 <table class="table">
                     <tr>
                         <td><b>id</b></td>
+                        <td><b>Аватар</b></td>
                         <td><b>Имя</b></td>
                         <td><b>Email</b></td>
                         <td><b>Телефон</b></td>
@@ -26,6 +27,7 @@
                     @foreach($users as $user)
                         <tr>
                             <td>{{$user->id}}</td>
+                            <td><img width="50" src ="{{$user->avatar}}"></td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->phone}}</td>

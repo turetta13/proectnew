@@ -51,6 +51,11 @@
                                     <input id="slug" type="text"
                                            class="form-control"
                                            name="slug" value="{{$categories->slug}}">
+                                    @if ($errors->has('slug'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('slug') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
 

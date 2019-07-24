@@ -17,6 +17,7 @@
                 <table class="table">
                     <tr>
                         <td><b>id</b></td>
+                        <td><b>Аватар</b></td>
                         <td><b>Имя</b></td>
                         <td><b>Email</b></td>
                         <td><b>Телефон</b></td>
@@ -25,6 +26,7 @@
                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td><?php echo e($user->id); ?></td>
+                            <td><img width="50" src ="<?php echo e($user->avatar); ?>"></td>
                             <td><?php echo e($user->name); ?></td>
                             <td><?php echo e($user->email); ?></td>
                             <td><?php echo e($user->phone); ?></td>

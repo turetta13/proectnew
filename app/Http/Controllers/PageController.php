@@ -45,13 +45,13 @@ class PageController extends Controller
 
     public function products()
     {
-        $products = \App\Product::where('publish', 1);
+
+        $products = \App\Product::where('publish', 1)->get();
 
         return view('products',
             [
                 'product' => $products, 'products' => Product::paginate(7),
             ]);
-
 
     }
 
@@ -71,7 +71,7 @@ class PageController extends Controller
     public function single($id)
     {
 
-        $single = Product::where(['id' => $id])->firstOrFail();
+        $single = Product::findOrFail($id);
         $similar = Product::where('category_id', '=', $id)->get();
 
         return view('single', ['single' => $single, 'similar' => $similar]);

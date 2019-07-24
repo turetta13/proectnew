@@ -70,7 +70,7 @@
                                     </button>
 
                                     <a class="btn btn-link" href="<?php echo e(route('register')); ?>">
-                                        <?php echo e(__('Зарегистрироваться')); ?>
+                                        <?php echo e(__('Регистрация')); ?>
 
                                     </a>
 

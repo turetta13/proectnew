@@ -56,15 +56,19 @@ class HomeController extends Controller
     public function profileSave($id = null, Request $request)
     {
 //ВАЛИДАЦИЯ РЕДАКТИРОВАНИЯ ДАННЫХ ПОЛЬЗОВАТЕЛЕМ
-        if ($id) {
-            $user = User::find($id);
 
-        } else {
+        $user = User::find($id);
+        $message = 'Данные изменены';
+
+        if ($user===null){
             $user = new User();
-            $user->password = \Hash::make($request->password);
-
+            $message = 'Пользователь успешно создан';
         }
 
+            $email_rules='required|email';
+        if($user->isDirty('email')) {
+            $email_rules=$email_rules.'required|email';
+        }
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -72,6 +76,22 @@ class HomeController extends Controller
             'role' => 'numeric',
         ]);
 
+        if ($request->has('avatar')) {
+            // Get image file
+            $image = $request->file('avatar');
+
+            // Define folder path
+            $folder = '/uploads/users/';
+            // Make a file path where image will be stored [ folder path + file name + file extension]
+            $name=md5(time());
+            $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
+
+            $image->move(public_path($folder),$name. '.'.$image->getClientOriginalExtension());
+            // Upload image
+
+            // Set user profile image path in database to filePath
+            $user->avatar = $filePath;
+        }
 
         $user->fill($request->only('name', 'email', 'phone', 'role'));
         if ($request->password) {
@@ -79,7 +99,7 @@ class HomeController extends Controller
         }
         $user->save();
 
-        return redirect()->back()->with('success', 'Данные изменены');
+        return redirect()->back()->with('success', $message);
 
 
     }

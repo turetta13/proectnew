@@ -18,8 +18,14 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+
                         @if ($user)
                             <table class="table">
+                                <tr>
+                                    <th><img width="100" src ="{{$user->avatar}}"></th>
+
+
+                                </tr>
 
                                 <tr>
                                     <th>Имя:</th>
@@ -37,6 +43,14 @@
                                     <td>{{$user->phone}}</td>
 
                                 </tr>
+
+                                @if($user->isAdmin())
+                                    <h4>админ панель</h4>
+                                    <a href="{{route('admin.list')}}"><li>редактировать пользователей</a><br>
+                                    <a href="{{route('admin.list')}}"><li>редактировать меню</a><br>
+                                    <a href="{{route('admin.products')}}"><li>редактировать продукты</a><br>
+                                @endif
+
                             </table>
 
                             <BR>
@@ -49,12 +63,20 @@
                             </a>
 
                         @else Вы не авторизированы
-                        <p>
-                            <a href="{{route('login')}}">
+
+<p><br>
+                       <a href="{{route('login')}}">
                                 <button type="submit" class="btn">
-                                    Авторизоваться
+                                    Войти
                                 </button>
                             </a>
+
+
+                                <a href="{{route('register')}}">
+                                    <button type="submit" class="btn">
+                                        Регистрация
+                                    </button>
+                                </a>
                         @endif
 
 

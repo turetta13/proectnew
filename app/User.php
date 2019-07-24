@@ -13,7 +13,7 @@ class User extends Authenticatable
     const ROLE_USER=2;
 
     protected $fillable = [
-        'name', 'email', 'password', 'phone','role',
+        'name', 'email', 'password', 'phone','role', 'avatar',
     ];
 
 
@@ -25,5 +25,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin()
+    {
+        return $this->role == self::ROLE_ADMIN;
+    }
+
+    public function isOperator()
+    {
+        return $this->role == self::ROLE_OPERATOR;
+    }
 
 }
