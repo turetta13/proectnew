@@ -91,6 +91,7 @@ class HomeController extends Controller
 
             // Set user profile image path in database to filePath
             $user->avatar = $filePath;
+
         }
 
         $user->fill($request->only('name', 'email', 'phone', 'role'));

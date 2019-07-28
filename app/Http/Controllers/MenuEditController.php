@@ -51,17 +51,31 @@ class MenuEditController extends Controller
 
         $message = 'успешно отредактировано';
 
-        if ($menu===null){
+        if ($menu === null) {
             $menu = new Category();
-            $message = 'категория'.' '. $menu->name .'успешно создана';
+
+            $validatedData = $request->validate([
+                'parent_id' => 'required',
+                'is_publish' => 'boolean',
+                'slug' => 'unique:categories',
+            ]);
+            $message = 'категория успешно создана';
         }
 
         $validatedData = $request->validate([
             'parent_id' => 'required',
-            'slug' => 'unique:categories',
             'is_publish' => 'boolean',
 
+
         ]);
+
+        if ($menu->isDirty('slug')) {
+            $request->validate(['slug' => 'unique:categories']);
+        } else {
+            $request->validate(['slug' => '']);
+
+            }
+
 
         $menu->fill($request->only('id', 'name', 'slug', 'description', 'parent_id', 'is_publish'));
 

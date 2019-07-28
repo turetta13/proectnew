@@ -107,6 +107,8 @@
                                         Сохранить
                                     </button>
 
+                                    <a href="<?php echo e(route('admin.menu')); ?>">назад</a>
+
                                     <br>
                                     <br>
 

@@ -47,7 +47,7 @@
                                 @if($user->isAdmin())
                                     <h4>админ панель</h4>
                                     <a href="{{route('admin.list')}}"><li>редактировать пользователей</a><br>
-                                    <a href="{{route('admin.list')}}"><li>редактировать меню</a><br>
+                                    <a href="{{route('admin.menu')}}"><li>редактировать меню</a><br>
                                     <a href="{{route('admin.products')}}"><li>редактировать продукты</a><br>
                                 @endif
 

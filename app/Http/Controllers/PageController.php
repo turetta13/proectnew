@@ -48,6 +48,9 @@ class PageController extends Controller
 
         $products = \App\Product::where('publish', 1)->get();
 
+        $products = \App\Product::where('publish', 1)->paginate(10);
+
+
         return view('products',
             [
                 'product' => $products, 'products' => Product::paginate(7),

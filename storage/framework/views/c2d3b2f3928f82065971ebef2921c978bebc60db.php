@@ -89,10 +89,11 @@
                                     <?php endif; ?>
                                 </div>
                             </div>
-<br>
+
+                            <br>
                             
                             <div class="form-group row">
-                                <label for="phone" class="col-sm-4 col-form-label text-md-right">
+                                <label for="avatar" class="col-sm-4 col-form-label text-md-right">
                                     Добавить Аватар</label>
 
                                 <div class="col-md-6">

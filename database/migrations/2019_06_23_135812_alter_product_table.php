@@ -12,13 +12,13 @@ class AlterProductTable extends Migration
      * @return void
      */
     public function up()
+
     {
-        Schema::table('products', function (Blueprint $table) {
-
-            $table->string('image_path')->nullable()->change();
-
+        Schema::table('products', function($table) {
+            $table->longText('avatar')->nullable();
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -26,13 +26,11 @@ class AlterProductTable extends Migration
      * @return void
      */
     public function down()
+
     {
-        {
-            Schema::table('products', function (Blueprint $table) {
-
-                $table->integer('image_path')->nullable()->change();
-
-            });
-        }
+        Schema::table('products', function($table) {
+            $table->dropColumn('avatar');
+        });
     }
+
 }

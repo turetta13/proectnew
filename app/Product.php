@@ -8,12 +8,13 @@ class Product extends Model
 
 {
     protected $fillable = [
-        'name', 'articul', 'brand', 'image_path', 'description',
-        'price',
-    ];
+        'name', 'description','category_id',
+        'price','shortdesc', 'image_path',
+        'image_path_2', 'image_path_3', 'publish', 'composition',
+        ];
 
     protected $hidden = [
-        'category_id', 'parent_id', 'created_at', 'updated_at'
+        'created_at', 'updated_at'
     ];
 
 }

@@ -7,7 +7,7 @@
                 <div class="col-sm-10">
                     <ul class="multi-column-dropdown">
 
-                        @if ( $cat->child()->count()>0)
+                        @if ( $cat->child()->count()>0 ||  $cat->where('is_publish',1)->get())
                             @foreach ($cat->child()->get() as $cat2)
 
                                 <li><a class="list"

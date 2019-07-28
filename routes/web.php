@@ -27,6 +27,10 @@ Route::get('/profile/create/', 'HomeController@profileCreate')->name('profile.cr
 
 //АДМИНКА ТОВАРОВ
 Route::get('/admin/products', 'ProductEditController@adminProducts')->name('admin.products');
+Route::get('/admin/products/edit/{id}', 'ProductEditController@productsEdit')->name('products.edit');
+Route::post('/admin/products/save/{id?}', 'ProductEditController@productsSave')->name('products.save');
+Route::get('/admin/products/delete/{id}', 'ProductEditController@productsDelete')->name('products.delete');
+Route::get('/admin/products/create/', 'ProductEditController@productsCreate')->name('products.create');
 
 //АДМИНКА ГЛАВНОГО МЕНЮ
 Route::get('/admin/menu', 'MenuEditController@adminMenu')->name('admin.menu');
@@ -34,3 +38,5 @@ Route::get('/admin/menu/edit/{id}', 'MenuEditController@menuEdit')->name('menu.e
 Route::post('/admin/menu/save/{id?}', 'MenuEditController@menuSave')->name('menu.save');
 Route::get('/admin/menu/delete/{id}', 'MenuEditController@menuDelete')->name('menu.delete');
 Route::get('/admin/menu/create/', 'MenuEditController@menuCreate')->name('menu.create');
+
+//АДМИНКА ПРОДУКТОВ

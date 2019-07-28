@@ -104,6 +104,8 @@
                                         Сохранить
                                     </button>
 
+                                    <a href="{{route('admin.menu')}}">назад</a>
+
                                     <br>
                                     <br>
 

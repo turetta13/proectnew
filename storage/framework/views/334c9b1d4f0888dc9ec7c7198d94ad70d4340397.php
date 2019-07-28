@@ -7,7 +7,7 @@
                 <div class="col-sm-10">
                     <ul class="multi-column-dropdown">
 
-                        <?php if( $cat->child()->count()>0): ?>
+                        <?php if( $cat->child()->count()>0 ||  $cat->where('is_publish',1)->get()): ?>
                             <?php $__currentLoopData = $cat->child()->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                                 <li><a class="list"
